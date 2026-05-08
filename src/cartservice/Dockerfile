@@ -4,7 +4,7 @@ WORKDIR /app
 COPY src/cartservice.csproj .
 RUN dotnet restore cartservice.csproj \
     -a $TARGETARCH
-COPY . .
+COPY src/ .
 RUN dotnet publish cartservice.csproj \
     -p:PublishSingleFile=true \
     -a $TARGETARCH \
@@ -13,7 +13,6 @@ RUN dotnet publish cartservice.csproj \
     -p:TrimMode=full \
     -c release \
     -o /cartservice
-
 
 FROM mcr.microsoft.com/dotnet/runtime-deps:10.0.0-noble-chiseled@sha256:b857c8cb8d929183cfe4c6dd9994abba92a2639dd2dbaf06005379f815991604
 
@@ -24,5 +23,3 @@ ENV DOTNET_EnableDiagnostics=0 \
     ASPNETCORE_HTTP_PORTS=7070
 USER 1000
 ENTRYPOINT ["/app/cartservice"]
-
- 
