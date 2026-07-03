@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cartservice
+  description: Service panier (cart) de la démo microservices Online Boutique, service interne sans exposition externe
+  tags:
+    - backend
+    - microservice
+    - online-boutique
+    - grpc
+  annotations:
+    argocd/app-name: cartservice
+  links:
+    - url: https://github.com/zayatihamza/microservices-demo/tree/main/src/cartservice
+      title: Source Code
+      icon: github
+    - url: https://argocd-server-argocd.apps.okd.3s.lab/applications/cartservice
+      title: Argo CD Application
+      icon: cloud
+spec:
+  type: service
+  lifecycle: development
+  owner: team-online-boutique
+  system: online-boutique
