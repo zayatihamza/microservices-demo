@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: frontend
+  description: Frontend de la démo microservices Online Boutique déployé sur OKD
+  tags:
+    - frontend
+    - microservice
+    - online-boutique
+  links:
+    - url: https://github.com/zayatihamza/microservices-demo/tree/main/src/frontend
+      title: Source Code
+      icon: github
+    - url: https://frontend-dev.apps.okd.3s.lab
+      title: Route OKD (dev)
+      icon: web
+spec:
+  type: service
+  lifecycle: development
+  owner: team-online-boutique
+  system: online-boutique
