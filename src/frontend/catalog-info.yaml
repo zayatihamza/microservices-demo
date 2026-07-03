@@ -7,6 +7,8 @@ metadata:
     - frontend
     - microservice
     - online-boutique
+  annotations:
+    argocd/app-name: frontend
   links:
     - url: https://github.com/zayatihamza/microservices-demo/tree/main/src/frontend
       title: Source Code
@@ -14,6 +16,9 @@ metadata:
     - url: https://frontend-dev.apps.okd.3s.lab
       title: Route OKD (dev)
       icon: web
+    - url: https://argocd-server-argocd.apps.okd.3s.lab/applications/frontend
+      title: Argo CD Application
+      icon: cloud
 spec:
   type: service
   lifecycle: development
